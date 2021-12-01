@@ -94,6 +94,12 @@ impl MT19937 {
         state
     }
 
+    pub fn new_with_seed(seed: u32) -> Self {
+        let mut state = Self::default();
+        state.seed(seed);
+        state
+    }
+
     /** initializes self.mt[N] with a seed */
     fn seed(&mut self, s: u32) {
         self.mt[0] = s;
